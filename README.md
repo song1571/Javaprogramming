@@ -36,38 +36,178 @@
         private boolean isAvailable;
 
         // 기본 생성자
-        // code를 작성하세요
-        
-        // 모든 필드를 초기화하는 생성자
-        // code를 작성하세요
+    // code를 작성하세요
+    public Book() {
+    }
 
-        // getter와 setter 메서드
-        // code를 작성하세요
-        
-        // toString 메서드
-        // code를 작성하세요
+    // 모든 필드를 초기화하는 생성자
+    // code를 작성하세요
+    public Book(String bookId, String title, String author, String category, boolean isAvailable) {
+        this.bookId = bookId;
+        this.title = title;
+        this.author = author;
+        this.category = category;
+        this.isAvailable = isAvailable;
+    }
+    
+    public String getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public boolean isAvailable() {
+        return isAvailable;
+    }
+
+    public void setAvailable(boolean available) {
+        isAvailable = available;
+    }
+
+    // toString 메서드
+    // code를 작성하세요
+    @Override
+    public String toString() {
+        return "Book{" +
+                "bookId='" + bookId + '\'' +
+                ", title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                ", category='" + category + '\'' +
+                ", isAvailable=" + isAvailable +
+                '}';
+    }
         
     }
 
-    public class BorrowRecord {
-        private Book book;
-        private Member member;
-        private LocalDate borrowDate;
-        private LocalDate returnDate;
-
-        // 기본 생성자
-        // code를 작성하세요
-        
-        // 모든 필드를 초기화하는 생성자
-        // code를 작성하세요        
-
-        // getter와 setter 메서드
-        // code를 작성하세요        
-
-        // toString 메서드
-        // code를 작성하세요
-        
+public class BorrowRecord {
+	
+    private Book book;
+    private Member member;
+    private LocalDate borrowDate;
+    private LocalDate returnDate;
+    
+    
+    // 기본 생성자
+ 	// code를 작성하세요
+    public BorrowRecord() {
     }
+
+	// 모든 필드를 초기화하는 생성자
+	// code를 작성하세요
+    public BorrowRecord(Book book, Member member, LocalDate borrowDate, LocalDate returnDate) {
+        this.book = book;
+        this.member = member;
+        this.borrowDate = borrowDate;
+        this.returnDate = returnDate;
+    }
+
+    // getter와 setter 메서드
+ 	// code를 작성하세요
+    public Book getBook() {
+        return book;
+    }
+
+    public void setBook(Book book) {
+        this.book = book;
+    }
+
+    public Member getMember() {
+        return member;
+    }
+
+    public void setMember(Member member) {
+        this.member = member;
+    }
+
+    public LocalDate getBorrowDate() {
+        return borrowDate;
+    }
+
+    public void setBorrowDate(LocalDate borrowDate) {
+        this.borrowDate = borrowDate;
+    }
+
+    public LocalDate getReturnDate() {
+        return returnDate;
+    }
+
+    public void setReturnDate(LocalDate returnDate) {
+        this.returnDate = returnDate;
+    }
+
+    // toString 메서드
+  	// code를 작성하세요
+    @Override
+    public String toString() {
+        return "BorrowRecord{" +
+                "book=" + book +
+                ", member=" + member +
+                ", borrowDate=" + borrowDate +
+                ", returnDate=" + returnDate +
+                '}';}
+    }
+    public class Person {
+	
+	private String name;
+	private String email;
+
+	public Person() {
+		
+	}
+
+	public Person(String name, String email) {
+		
+		this.name = name;
+	    this.email = email;
+	    }
+
+	    public String getName() {
+	        return name;
+	    }
+
+	    public void setName(String name) {
+	        this.name = name;
+	    }
+
+	    public String getEmail() {
+	        return email;
+	    }
+
+	    public void setEmail(String email) {
+	        this.email = email;
+	    }
+
+	    
+	    public String toString() {
+	        return "";
+	    }
+	}
     ```
 
 ### 3. 제너릭 및 컬렉션 사용 (10점)
@@ -81,31 +221,36 @@
     import java.util.*;
     import java.util.function.Predicate;
 
-    public class Library<T> {
-        private List<T> items;
+	public class Library<T> {
+		
+		private List<T> items;
+		
+		// 기본 생성자
+		// code를 작성하세요
+		public Library() {
+			
+		}
+		
+		// 아이템 추가 메서드
+		// code를 작성하세요
+		
+		// 아이템 삭제 메서드
+		// code를 작성하세요
+		
+		// 아이템 조회 메서드
+		// code를 작성하세요
+		
+		// 검색 메서드
+		public List<T> searchItems(Predicate<T> condition) {
+		 // code를 작성하세요
+		}
+		 
+		// toString 메서드
+		// code를 작성하세요
 
-        // 기본 생성자
-        // code를 작성하세요
+}
+		
 
-        // 아이템 추가 메서드
-        // code를 작성하세요
-
-        // 아이템 삭제 메서드
-        // code를 작성하세요
-
-        // 아이템 조회 메서드
-        // code를 작성하세요
-
-        // 검색 메서드
-        public List<T> searchItems(Predicate<T> condition) {
-            // code를 작성하세요
-        }
-
-        // toString 메서드
-        // code를 작성하세요
-
-        
-    }
 
     // 예시 사용법
     public class Main {
